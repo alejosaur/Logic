@@ -1,0 +1,13 @@
+.contenido{
+    text-align: center;
+}
+
+.codigoPremio{
+    font-size: 2rem;
+    background-color: ghostwhite;
+}
+
+.buttonPremio{
+    font-size: 2rem;
+    border-radius: 4px;
+}

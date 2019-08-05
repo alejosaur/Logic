@@ -1,0 +1,28 @@
+<div class="titulos">
+    <H1>MIREN, TENGO UNA NOVIA JUICIOSA 😍</H1>
+</div>
+
+<div class="contenido">
+    <p>¿Qué toca estudiar hoy?</p>
+    <button (click)="elegirEstudiar('Tablas de verdad');">Tablas de verdad</button>
+    <button (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones</button>
+    <button (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?</button>
+    <br>
+    <p>Si ya viste algún tema hace más de 4 días y no he puesto nada para estudiarlo, tienes un deseo gratis 🙍‍♂️.</p>
+</div>
+
+<div class="titulos" >
+    <H1>{{queEstudiar}}</H1>
+</div>
+
+<div [style.display]=" this.queEstudiar=='Tablas de verdad' ? 'block' : 'none' " class="contenido">
+    <p>tdv</p>
+</div>
+
+<div [style.display]=" this.queEstudiar=='Evaluar proposiciones' ? 'block' : 'none' " class="contenido">
+    <p>ep</p>
+</div>
+
+<div [style.display]=" this.queEstudiar=='¿Simple o compuesta?' ? 'block' : 'none' " class="contenido">
+    <p>soc</p>
+</div>
