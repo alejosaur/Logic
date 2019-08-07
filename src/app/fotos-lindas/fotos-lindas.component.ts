@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FotosLindasComponent implements OnInit {
 
+  private foto = require("../../images/construction.jpg");
+
   constructor() { }
 
   ngOnInit() {

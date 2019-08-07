@@ -9,6 +9,7 @@ export class PremioComponent implements OnInit {
 
   lugar:string;
   ruta:string;
+  private foto = '';
 
   constructor() { 
     this.lugar = "";
@@ -16,6 +17,21 @@ export class PremioComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  checkPremio(lugar:string){
+    if(lugar.toLowerCase() == "jardin botanico"){
+      console.log("yas");
+      this.lugar = "Jardín Botánico";
+      this.foto = require("../../images/jardin.jpg");
+    }else if(lugar.toLowerCase() == "sofa"){
+      console.log("yas");
+      this.lugar = "SOFA";
+      this.foto = require("../../images/sofa.gif");
+    }else{
+      this.lugar = "Oye tramposa ese código no es válido 😡."
+      this.foto = '';
+    }
   }
 
 }

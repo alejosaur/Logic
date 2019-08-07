@@ -4,9 +4,9 @@
 
 <div class="contenido">
     <p>¿Qué toca estudiar hoy?</p>
-    <button (click)="elegirEstudiar('Tablas de verdad');">Tablas de verdad</button>
-    <button (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones</button>
-    <button (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?</button>
+    <!--button class="tema" (click)="elegirEstudiar('Tablas de verdad');">Tablas de verdad</button-->
+    <button class="tema" (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones</button>
+    <button class="tema" (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?</button>
     <br>
     <p>Si ya viste algún tema hace más de 4 días y no he puesto nada para estudiarlo, tienes un deseo gratis 🙍‍♂️.</p>
 </div>
@@ -16,13 +16,93 @@
 </div>
 
 <div [style.display]=" this.queEstudiar=='Tablas de verdad' ? 'block' : 'none' " class="contenido">
-    <p>tdv</p>
+    <p>Acá no hay ejercicios, pero tampoco premio</p>
 </div>
 
 <div [style.display]=" this.queEstudiar=='Evaluar proposiciones' ? 'block' : 'none' " class="contenido">
-    <p>ep</p>
+    <p>Para este premio, tienes que ver cada uno de los elementos de la lista que está abajo, y evaluar si el resultado de la 
+        expresión es Verdadero o Falso.<br>En <a href="https://matematicasn.blogspot.com/2015/11/logica-proposicional-ejercicios.html">este link </a> 
+        me parece que explican bien por si tienes dudas, pero si se te hace bola porfi preguntame.</p>
+    <p>A medida que las vayas resolviendo, colocas V o F dependiendo del resultado. Cuando acabes, le das en ¿Cómo lo hice?.</p>
+    <p>pd: yo sé que no es tan bonito ni sencillo de usar, pero soy tonto y se me hizo bola hacer algo más bonito 🙁.</p>
+    <ul>
+        <b>p=Verdadero.<br>
+        q=Falso<br></b>
+        <li>
+            p ∧ q ∨ q <!--F-->
+        </li>
+        <li>
+            p ∧ ¬p <!--F-->
+        </li>
+        <li>
+            p ∨ ¬p <!--V-->
+        </li>
+        <li>
+            [(p → q) ∧ p] → q <!--V-->
+        </li>
+        <li>
+            [(p → q) ∧ ¬q] → ¬p <!--V-->
+        </li>
+        <b>p=Verdadero.<br>
+        q=Verdadero<br></b>
+        <li>
+            p ∧ q → p <!--V-->
+        </li>
+        <li>
+            (p → q) ∧ ¬q <!--F-->
+        </li>
+        <b>p=Falso.<br>
+            q=Falso
+            r=Verdadero<br></b>
+        <li>
+            (p ∧ q) ∨ (p ∧ r) <!--F-->
+        </li>
+        <li>
+            p ∧ (q ∨ r) <!--F-->
+        </li>
+        <b>Ahora con proposiciones escritas.</b>
+        <li>El sol es rojo</li> <!--F-->
+        <li>Andrea come pizza y hamburguesa.</li> <!--V-->
+        <li>Quiero helado de cerveza, o de mandarina, o de limón, o de lulo.</li><!--V-->
+        <li>Me gusta la carne y la cebolla</li><!--F-->
+    </ul>
+    <div class="checkDiv">
+        <input class="checkText" type="text" #respuestasEvaluarPrep>
+        <button class="checkBtn" (click)="checkAnswers(respuestasEvaluarPrep.value)">¿Cómo lo hice?</button>
+    </div>
+    <div class="titulos" >
+        <H1>{{clavePremio}}</H1>
+    </div>
 </div>
 
 <div [style.display]=" this.queEstudiar=='¿Simple o compuesta?' ? 'block' : 'none' " class="contenido">
-    <p>soc</p>
+    <p>Este es fácil, tienes que ver cada uno de los elementos de la lista que está abajo, y analizar si es una proposición simple,
+        una proposición compuesta o si ni siquiera es una proposición.</p>
+    <p>A medida que las vayas resolviendo, colocas las respuestas en el cuadro de texto de abajo así: S si es simple, C si es 
+        compuesta, y N si no es una proposición. Cuando acabes, le das en ¿Cómo lo hice?.</p>
+    <p>pd: yo sé que no es tan bonito ni sencillo de usar, pero soy tonto y se me hizo bola hacer algo más bonito 🙁.</p>
+    <ul>
+        <li>Andrea come papas todos los días.</li>
+        <li>¿Te gusta la lechuga?</li>
+        <li>Alejandro es tonto y feo.</li>
+        <li>Maria victoria es hervíbora.</li>
+        <li>Daniela no sabe cortarse el capul.</li>
+        <li>Bruno es un perro feo.</li>
+        <li>Si Valentina no sale un sábado, se muere de aburrimiento.</li>
+        <li>Tu dinosaurio rojo es muy feo.</li>
+        <li>p</li>
+        <li>Diego parece un bonobo.</li>
+        <li>q</li>
+        <li>Si tienes todas bien, vas a tener un premio.</li>
+        <li>Buenos días.</li>
+        <li>p ^ q</li>
+        <li>1+1=16</li>
+    </ul>
+    <div class="checkDiv">
+        <input class="checkText" type="text">
+        <button class="checkBtn" (click)="checkAnswers('SCSCNN')">¿Cómo lo hice?</button>
+    </div>
+    <div class="titulos" >
+        <H1>{{clavePremio}}</H1>
+    </div>
 </div>

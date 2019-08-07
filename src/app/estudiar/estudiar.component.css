@@ -1,5 +1,22 @@
-button{
+.tema{
     font-size: 1.5rem;
     height: 130px;
     width: 180px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.checkText{
+    font-size: 2rem;
+    width: 75%;
+}
+
+
+.checkBtn{
+    font-size: 2rem;
+    max-width: 25%;
+}
+
+.checkDiv{
+    text-align: center;
 }

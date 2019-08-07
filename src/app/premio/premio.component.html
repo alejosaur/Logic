@@ -3,12 +3,31 @@
 </div>
 
 <div class="contenido">
-    <p>Bueno, te creo, ganaste 🥳. Coloca acá abajo el código:</p>
-    <input type="text" class="codigoPremio">
+    <p>Bueno, te creo, ganaste 🥳. Coloca acá abajo el código (sin tildes porfi 🙁):</p>
+    <input type="text" class="codigoPremio" #codigoPremio>
     <br><br>
-    <button class="buttonPremio">Yastá</button>
+    <button class="buttonPremio" (click)="checkPremio(codigoPremio.value)">Yastá</button>
 </div>
 
 <div class="titulos">
     <H1>{{lugar}}</H1>
+</div>
+
+<div class="contenido" [style.display]=" this.foto!='' ? 'block' : 'none' ">
+    <img [src]="foto" />
+    <p [style.display]="this.lugar == 'Jardín Botánico' ? 'block' : 'none'">
+        Por alguna extraña razón, este fue el primer lugar que se me ocurrió cuando pensé en estos premios; aunque justo ahora mientras escribo esto me parece un
+        premio super malo y decepcionante 🙁 pls no me termines. Solo quiero que recuerdes lo lindo que fue ir a la exposición de plantitas carnívoras, y cuando
+        subimos a tomarnos fotos lindas pero había mucha gente y nos quedamos hasta que se fueron, y cuando salimos teníamos mucha hambre y por eso no entramos a 
+        una conferencia o algo así. Ese día también te paraste sobre una piedra cerca a una cascada y tenías mucho miedo de caerte jajaja 😍. Te amooooo mucho, y 
+        ojalá pasemos muchos muuchos más momentos lindos como los de ese día.
+    </p>
+    <p [style.display]="this.lugar == 'SOFA' ? 'block' : 'none'">
+        Hacer esto y no poner el SOFA sería pecado, el SOFA ha sido suuper importante para nuestra relación, y he notado que cada sofa estamos en un punto diferente:
+        En el primer SOFA, eramos solo amigos super casuales; en el segundo SOFA, nos gustábamos aunque no lo sabíamos (y no fui capaz de darte picos 🙁); en el tercer 
+        SOFA ya éramos novios y estábamos muuuy enamorados (yo aún lo estoy, creo que tú también 😍); y al cuarto SOFA no fuimos porque nos quedamos mimiendo 😉🤤. 
+        ¿Notas la evolución?. Además de ser una medida de cómo nuestra relación crece, siempre es muy lindo, y la pasamos muy bien, y me ves ser muy ñoño, y me ves
+        desesperarme cuando me siento encerrado entre mucha gente 😖, y nos provocamos como de TODO LO QUE VENDEN pero pobres 🙁. Te amoo con todo mi ser, y espero
+        pasar un millón de SOFAs más a tu lado cosita.
+    </p>
 </div>
