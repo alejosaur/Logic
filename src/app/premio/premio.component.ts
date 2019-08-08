@@ -9,7 +9,7 @@ export class PremioComponent implements OnInit {
 
   lugar:string;
   ruta:string;
-  foto = '';
+  public foto = '';
 
   constructor() { 
     this.lugar = "";
