@@ -85,7 +85,7 @@
         <li>Andrea come papas todos los días.</li>
         <li>¿Te gusta la lechuga?</li>
         <li>Alejandro es tonto y feo.</li>
-        <li>Maria victoria es hervíbora.</li>
+        <li>Maria Victoria es hervíbora.</li>
         <li>Daniela no sabe cortarse el capul.</li>
         <li>Bruno es un perro feo.</li>
         <li>Si Valentina no sale un sábado, se muere de aburrimiento.</li>
@@ -99,8 +99,8 @@
         <li>1+1=16</li>
     </ul>
     <div class="checkDiv">
-        <input class="checkText" type="text">
-        <button class="checkBtn" (click)="checkAnswers('SCSCNN')">¿Cómo lo hice?</button>
+        <input class="checkText" type="text" #respuestasSimpleComp>
+        <button class="checkBtn" (click)="checkAnswers(respuestasSimpleComp.value)">¿Cómo lo hice?</button>
     </div>
     <div class="titulos" >
         <H1>{{clavePremio}}</H1>
