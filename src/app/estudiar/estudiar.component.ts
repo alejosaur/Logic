@@ -19,15 +19,13 @@ export class EstudiarComponent implements OnInit {
   }
 
   elegirEstudiar(tema:string){
-    console.log("lala");
     this.queEstudiar = tema;
   }
 
   checkAnswers(respuestas:string){
-    console.log(respuestas+"aaa");
     if(this.queEstudiar == '¿Simple o compuesta?'){
-      if(respuestas.toUpperCase() == 'SNCSCSCSSSSCNCC'){
-        this.clavePremio = "Código premio: SOFA"
+      if(respuestas.toLowerCase() == 'snnscscscnnsnccc'){
+        this.clavePremio = "Código premio: Mundo Aventura"
       }else{
         this.clavePremio = "Ups, tienes algo mal 🙁 ¡Revisa tus respuestas o corre a preguntarle a tu novio!."
       }

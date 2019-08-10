@@ -21,13 +21,14 @@ export class PremioComponent implements OnInit {
 
   checkPremio(lugar:string){
     if(lugar.toLowerCase() == "jardin botanico"){
-      console.log("yas");
       this.lugar = "Jardín Botánico";
       this.foto = require("../../images/jardin.jpg");
     }else if(lugar.toLowerCase() == "sofa"){
-      console.log("yas");
       this.lugar = "SOFA";
       this.foto = require("../../images/sofa.gif");
+    }else if(lugar.toLowerCase() == "noruefa"){
+      this.lugar = "Noruefa";
+      this.foto = require("../../images/noruefa.jpg");
     }else{
       this.lugar = "Oye tramposa ese código no es válido 😡."
       this.foto = '';
