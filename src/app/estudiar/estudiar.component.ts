@@ -35,6 +35,12 @@ export class EstudiarComponent implements OnInit {
       }else{
         this.clavePremio = "Ups, tienes algo mal 🙁 ¡Revisa tus respuestas o corre a preguntarle a tu novio!."
       }
+    }else if(this.queEstudiar == 'Reescribir proposiciones'){
+      if(respuestas.toUpperCase() == 'BABCACA'){
+        this.clavePremio = "Código premio: Lofeo"
+      }else{
+        this.clavePremio = "Ups, tienes algo mal 🙁 ¡Revisa tus respuestas o corre a preguntarle a tu novio!."
+      }
     }
   }
 }

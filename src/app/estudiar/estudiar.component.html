@@ -6,7 +6,8 @@
     <p>¿Qué toca estudiar hoy?<br><br>Las que tienen un 👨‍💻 tienen preguntas nuevaas.</p>
     <!--button class="tema" (click)="elegirEstudiar('Tablas de verdad');">Tablas de verdad</button-->
     <button class="tema" (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones</button>
-    <button class="tema" (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?👨‍💻</button>
+    <button class="tema" (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?</button>
+    <button class="tema" (click)="elegirEstudiar('Reescribir proposiciones');">Reescribir Proposiciones</button>
     <br>
     <p>Si ya viste algún tema hace más de 4 días y no he puesto nada para estudiarlo, o encuentras algún bug, tienes un deseo gratis 🙍‍♂️.</p>
 </div>
@@ -15,8 +16,89 @@
     <H1>{{queEstudiar}}</H1>
 </div>
 
-<div [style.display]=" this.queEstudiar=='Tablas de verdad' ? 'block' : 'none' " class="contenido">
-    <p>Acá no hay ejercicios, pero tampoco premio</p>
+<div [style.display]=" this.queEstudiar=='Reescribir proposiciones' ? 'block' : 'none' " class="contenido">
+    <p>Para este premio, tienes que convertir las frases a expresiones lógicas, y ver con cuál de las tres opciones encaja mejor. 
+        Cuando tengas el resultado, colocas en el cuadro de abajo A, B, o C, dependiendo si es la primera, segunda, o tercera.</p>
+    <p>Cuando acabes, le das en ¿Cómo lo hice?, y yastá.</p>
+    <ul>
+        <b>El viernes no vamos a vernos.<br></b>
+        <li>
+            p
+        </li>
+        <li>
+            ~p <!--b-->
+        </li>
+        <li>
+            p ∨ ~p 
+        </li>
+        <b>Si como empanadas, me salen gorditos.</b>
+        <li>
+            p → q <!--a-->
+        </li>
+        <li>
+            p → p 
+        </li>
+        <li>
+            p → ~q
+        </li>
+        <b>Si como empanadas o arepas, me salen gorditos.</b>
+        <li>
+            p → q 
+        </li>
+        <li>
+            (p ∨ q) → r <!--b--> 
+        </li>
+        <li>
+            p ∨ (q → r)
+        </li>
+        <b>Andrea sale conmigo los domingos, porque trabaja los sábados y los martes.</b>
+        <li>
+            p → q 
+        </li>
+        <li>
+            p ∧ p → r 
+        </li>
+        <li>
+            p ∧ q → r <!--c-->
+        </li>
+        <b>El Sol es una estrella si y sólo si 1+2=4.</b>
+        <li>
+            p ↔ q <!--a-->
+        </li>
+        <li>
+            p ↔ p 
+        </li>
+        <li>
+            p ↔ ~q
+        </li>
+        <b>En una casa hay jardín si y solo sí esa casa es habitada por una familia o por dos perros.</b>
+        <li>
+            (q ∧ r) → p
+        </li>
+        <li>
+            Todas están mal, novio tonto.
+        </li>
+        <li>
+            p ↔ (q ∧ r)<!--c-->
+        </li>
+        <b>TE AMOOOOOOO y quiero estar contigo todos los días de mi vida.</b>
+        <li>
+            p ∨ q <!--a-->
+        </li>
+        <li>
+            p → p → p  → p  → p  → p  → p  
+        </li>
+        <li>
+            Si escribes mal amo, no es una proposición.
+        </li>
+    </ul>
+    <div class="checkDiv">
+        <input class="checkText" type="text" #respuestasReescribirPrep>
+        <button class="checkBtn" (click)="checkAnswers(respuestasReescribirPrep.value)">¿Cómo lo hice?</button>
+    </div>
+    <div class="titulos" >
+        <H1>{{clavePremio}}</H1>
+    </div>
 </div>
 
 <div [style.display]=" this.queEstudiar=='Evaluar proposiciones' ? 'block' : 'none' " class="contenido">
