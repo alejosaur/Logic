@@ -5,9 +5,10 @@
 <div class="contenido">
     <p>¿Qué toca estudiar hoy?<br><br>Las que tienen un 👨‍💻 tienen preguntas nuevaas.</p>
     <!--button class="tema" (click)="elegirEstudiar('Tablas de verdad');">Tablas de verdad</button-->
-    <button class="tema" (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones</button>
-    <button class="tema" (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?</button>
-    <button class="tema" (click)="elegirEstudiar('Reescribir proposiciones');">Reescribir Proposiciones</button>
+    <button class="tema" (click)="elegirEstudiar('Evaluar proposiciones');">Evaluar proposiciones<br><br> </button>
+    <button class="tema" (click)="elegirEstudiar('¿Simple o compuesta?');">¿Simple o compuesta?<br> <br></button>
+    <button class="tema" (click)="elegirEstudiar('Reescribir proposiciones');">Reescribir Proposiciones<br> 👨‍💻 </button>
+    <button class="tema" (click)="elegirEstudiar('Tipos de números');">Tipos de números<br> 👨‍💻 </button>
     <br>
     <p>Si ya viste algún tema hace más de 4 días y no he puesto nada para estudiarlo, o encuentras algún bug, tienes un deseo gratis 🙍‍♂️.</p>
 </div>
@@ -21,45 +22,46 @@
         Cuando tengas el resultado, colocas en el cuadro de abajo A, B, o C, dependiendo si es la primera, segunda, o tercera.</p>
     <p>Cuando acabes, le das en ¿Cómo lo hice?, y yastá.</p>
     <ul>
-        <b>El viernes no vamos a vernos.<br></b>
+        <!-- ~ ∨ →  -->
+        <b>Está haciendo frío pero no está lloviendo.<br></b>
         <li>
-            p
+            p ∧ q
         </li>
         <li>
-            ~p <!--b-->
-        </li>
-        <li>
-            p ∨ ~p 
-        </li>
-        <b>Si como empanadas, me salen gorditos.</b>
-        <li>
-            p → q <!--a-->
-        </li>
-        <li>
-            p → p 
+            p ∧ ~q <!--b-->
         </li>
         <li>
             p → ~q
         </li>
-        <b>Si como empanadas o arepas, me salen gorditos.</b>
+        <b>Hoy no es viernes.</b>
         <li>
-            p → q 
+            p → q
         </li>
         <li>
-            (p ∨ q) → r <!--b--> 
+            p 
+        </li>
+        <li>
+            ~p <!--c-->
+        </li>
+        <b>Andrea no me dejó mimir ayer, entonces tengo sueñito.</b>
+        <li>
+            p → q<!--a--> 
+        </li>
+        <li>
+            (p ∨ q) → r 
         </li>
         <li>
             p ∨ (q → r)
         </li>
-        <b>Andrea sale conmigo los domingos, porque trabaja los sábados y los martes.</b>
+        <b>Si 2+2=5, entonces el sol es morado y todas las vacas son negras.</b>
         <li>
-            p → q 
+            p → q ∧ r <!--a-->
         </li>
         <li>
-            p ∧ p → r 
+            p → q ∨ r
         </li>
         <li>
-            p ∧ q → r <!--c-->
+            p ∧ q → r 
         </li>
         <b>El Sol es una estrella si y sólo si 1+2=4.</b>
         <li>
@@ -71,25 +73,25 @@
         <li>
             p ↔ ~q
         </li>
-        <b>En una casa hay jardín si y solo sí esa casa es habitada por una familia o por dos perros.</b>
+        <b>Yo sé que vas a tener muchísimo éxito y yo quiero compartirlo todo contigo.</b>
         <li>
-            (q ∧ r) → p
+            Te amo.
         </li>
         <li>
-            Todas están mal, novio tonto.
+            La verdad esto lo tienes muy claro, entonces quería hacer algo lindo.
         </li>
         <li>
-            p ↔ (q ∧ r)<!--c-->
+            p ∧ q<!--c-->
         </li>
-        <b>TE AMOOOOOOO y quiero estar contigo todos los días de mi vida.</b>
+        <b>Vas a ser una persona muy muy muy buena en lo que sea que hagas siempre y cuando te guste y no te rindas.</b>
         <li>
-            p ∨ q <!--a-->
-        </li>
-        <li>
-            p → p → p  → p  → p  → p  → p  
+            Estos dos últimos son mensajes que me has mandado y tengo como destacados.
         </li>
         <li>
-            Si escribes mal amo, no es una proposición.
+            p ↔ (q ∧ r) <!--b-->
+        </li>
+        <li>
+            Me han ayudado mucho muchas veces que estoy desmotivado y no quiero nada 😔 gracias cosita ❤.
         </li>
     </ul>
     <div class="checkDiv">
@@ -184,6 +186,61 @@
     <div class="checkDiv"> 
         <input class="checkText" type="text" #respuestasSimpleComp>
         <button class="checkBtn" (click)="checkAnswers(respuestasSimpleComp.value)">¿Cómo lo hice?</button>
+    </div>
+    <div class="titulos" >
+        <H1>{{clavePremio}}</H1>
+    </div>
+</div>}<div [style.display]=" this.queEstudiar=='Tipos de números' ? 'block' : 'none' " class="contenido">
+    <p>Holii este ya lo sabes jugar, pones en el cuadro V o F, y cuando acabes, le das en ¿Cómo lo hice?.</p>
+    <p>pd: Acuérdate mi vida 
+        <br><b>Reales:</b> Todos toditos todos.
+        <br><b>Racionales:</b> Estos son los que tienen decimales FINITOS (ten en cuenta que 0 decimales es un número finito 😉).
+        <br><b>Enteros:</b> Estos son los únicos que tienen un nombre fácil :3, son todos los que no tienen decimales..
+        <br><b>Naturales:</b> Estos son los que usas a diario para contar, son los enteros positivos (y el cero).
+        <br><b>Irracionales:</b> Estos son feos como yo 😭, mentiritas yo soy más feo, estos números tienen decimales infinitos.<br>.
+        Ya sabes, cualquier duda corres al chat de Osito a preguntarle, ese man me dijo que con todo el amor del mundo te puede explicar.
+    </p>
+    <ul>
+        <li>
+            π es un número irracional. <!--v-->
+        </li>
+        <li>
+            √64 es un número natural. <!--v-->
+        </li>
+        <li>
+            82746597210734.12309846321647... es un número entero. <!--f-->
+        </li>
+        <li>
+            La suma de dos números naturales siempre da como resultado otro natural. <!--V-->
+        </li>
+        <li>
+            Los números -5, 4, -37, 0, 94 son enteros pero no reales. <!--f-->
+        </li>
+        <li>
+            El número <sup>10</sup>/<sub>3</sub> es racional. <!--f-->
+        </li>
+        <li>
+            13,10 es un número racional y real. <!--v-->
+        </li>
+        <li>
+            Todos los números naturales son enteros. <!--f-->
+        </li>
+        <li>
+            12,333333333... es un número real e irracional. <!--v-->
+        </li>
+        <li>
+            8<Sup>2</Sup> es un número entero, real, y natural. <!--v-->
+        </li>
+        <li>
+            12 no es un número real. <!--f-->
+        </li>
+        <li>
+            4,2033333333333333333333333333333333333333333333 es un numero periódico mixto. <!--v-->
+        </li>
+    </ul>
+    <div class="checkDiv">
+        <input class="checkText" type="text" #respuestasTipoNum>
+        <button class="checkBtn" (click)="checkAnswers(respuestasTipoNum.value)">¿Cómo lo hice?</button>
     </div>
     <div class="titulos" >
         <H1>{{clavePremio}}</H1>
