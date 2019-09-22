@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,7 +21,8 @@ import { PremioComponent } from './premio/premio.component';
   ],
   imports: [
     BrowserModule, 
-    RoutingModule
+    RoutingModule,
+    Angular2ImageGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
