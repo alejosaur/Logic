@@ -41,6 +41,9 @@ export class PremioComponent implements OnInit {
     }else if(lugar.toLowerCase() == "servil"){
       this.lugar = "Servil";
       this.foto = require("../../images/servil.jpg");
+    }else if(lugar.toLowerCase() == "sueños"){
+      this.lugar = "Sueños";
+      this.foto = require("../../assets/img/gallery/preview_s/IMG_20180121_155339.jpg");
     }else{
       this.lugar = "Oye tramposa ese código no es válido 😡."
       this.foto = '';
